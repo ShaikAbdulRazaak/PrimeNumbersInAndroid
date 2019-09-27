@@ -1,14 +1,10 @@
-package com.roger.higherorlower;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 
 public class Main3Activity extends AppCompatActivity {
@@ -29,13 +25,13 @@ public class Main3Activity extends AppCompatActivity {
     }
 
     public void result(View view) {
-        try {
-            s = number.getText().toString();
-            n = Integer.parseInt(s);
-            if (number.getText() == null) {
+            if (number.getText().toString().isEmpty()) {
                 Toast.makeText(this, "Enter a value", Toast.LENGTH_SHORT).show();
+                resultprime.setText(null);
             } else {
                 try {
+                    s = number.getText().toString();
+                    n = Integer.parseInt(s);
                     int high = n;
                     if (high > 1434) {
                         resultprime.setText("number is too large");
@@ -65,9 +61,6 @@ public class Main3Activity extends AppCompatActivity {
                     c.printStackTrace();
                 }
             }
-        } catch (Exception c) {
-            c.printStackTrace();
-        }
     }
 
 }
